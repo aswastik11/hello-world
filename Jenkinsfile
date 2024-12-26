@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage('Clone Code') {
             steps {
-                git url:'https://github.com/aswastik11/hello-world.git'
+                git url:'https://github.com/aswastik11/hello-world.git', branch: "develop"
             }
         }
         stage("Build Image and Push"){
