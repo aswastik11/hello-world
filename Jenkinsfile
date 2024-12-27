@@ -1,10 +1,19 @@
 pipeline{
-    agent any
-    
+    agent {
+        docker {
+            image 'python:3-alpine'
+        }
+    }
     stages{
         stage('Clone Code') {
             steps {
                 git url:'https://github.com/aswastik11/hello-world.git'
+            }
+        }
+		stage("Code Build & Test"){
+            steps{
+                echo "Code Build Stage"
+                sh "docker build -t node-app ."
             }
         }
         stage("Build Image and Push"){
