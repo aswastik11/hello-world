@@ -2,6 +2,7 @@
 
 import time
 import os
+import json
 from flask import Flask
 app = Flask(__name__)
 
@@ -15,7 +16,7 @@ def elapsed():
 
 @app.route('/')
 def root():
-    return os.environ
+    return json.dumps(os.environ)
     #return "Hello World (Python)! (up %s)\n" % elapsed()
 
 if __name__ == "__main__":
