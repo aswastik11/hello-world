@@ -16,7 +16,7 @@ def elapsed():
 
 @app.route('/')
 def root():
-    return json.dumps(os.environ)
+    return json.dumps(dict(os.environ), indent=4)
     #return "Hello World (Python)! (up %s)\n" % elapsed()
 
 if __name__ == "__main__":
