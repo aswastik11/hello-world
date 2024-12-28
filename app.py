@@ -13,7 +13,7 @@ client = hvac.Client(url=os.getenv('VAULT_ADDR'))
 client.token = os.getenv('VAULT_TOKEN')
 
 # Read a secret
-secret = client.secrets.kv.read_secret_version(path='hello-world')
+secret = client.secrets.kv.read_secret_version(path='hello-world/config')
 START = time.time()
 
 def elapsed():
